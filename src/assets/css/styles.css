@@ -1,0 +1,479 @@
+@import "loading-dots.css";
+@import "form.css";
+@import "loading-pages.css";
+@import "background-animation.css";
+@import "media-queries.css";
+
+@font-face {font-family: "Madera Regular";
+    src: url("/src/assets/fonts/Madera/a3e629ef74f23205613f908b609d9b72.eot"); /* IE9*/
+    src: url("/src/assets/fonts/Madera/a3e629ef74f23205613f908b609d9b72.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/src/assets/fonts/Madera/a3e629ef74f23205613f908b609d9b72.woff2") format("woff2"), /* chrome、firefox */
+    url("/src/assets/fonts/Madera/a3e629ef74f23205613f908b609d9b72.woff") format("woff"), /* chrome、firefox */
+    url("/src/assets/fonts/Madera/a3e629ef74f23205613f908b609d9b72.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("/src/assets/fonts/Madera/a3e629ef74f23205613f908b609d9b72.svg#Madera Regular") format("svg"); /* iOS 4.1- */
+}
+
+* {
+    font-family: 'Madera Regular', sans-serif;
+    color: white;
+    font-size: 25px;
+}
+
+body {
+    /*background: url("../images/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+    overflow-x: hidden;
+}
+
+img {
+    z-index: 2;
+}
+
+.header {
+    margin-top: 5vh;
+}
+
+a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.title a {
+    display: flex;
+}
+
+.title-strong, .title-strong a {
+    font-size: 2.75rem;
+    font-weight: 600;
+    color: white;
+    transition: all .5s;
+}
+
+.title-strong:hover, .title-strong:hover a {
+    transform: scale(1.4);
+    color: deeppink !important;
+}
+
+@keyframes title-strong-in {
+    to {
+        font-size: 4rem;
+        color: deeppink;
+    }
+}
+
+@keyframes title-strong-out {
+    to {
+        font-size: 2.75rem;
+        color: white;
+    }
+}
+
+.title-light {
+    --title-text-margin-top: 1.4rem;
+    align-content: center;
+    margin-top: var(--title-text-margin-top);
+    font-weight: 300;
+}
+
+
+.line {
+    display: inline-block;
+    width: 50px;
+    margin: 30px;
+}
+
+.menu-title-normal {
+    font-size: 0.75rem;
+    text-align: right;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: line-through;
+    transition: 0.3s all ease-out;
+}
+
+.menu-list-normal {
+    text-align: right;
+    list-style: none;
+}
+
+.menu-list-normal li {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.menu-title-active {
+    color: #B615A0;
+}
+
+.home-title {
+    margin: 15vh 0;
+    font-weight: 400;
+    font-size: 1.5rem;
+    z-index: 3;
+    /* 2-й параметр, від 0 до 5 текст повертається вліво, від 0 до -5 вправо. ; 1-й параметр від 0 до -15 вверх, від 0 до 15 вниз  */
+    /*transform: skew(0.5deg, -5deg);*/
+}
+
+
+.home-title strong {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.tips {
+    margin-top: 30vh !important;
+}
+
+.home-tip {
+    font-size: 0.5rem;
+    font-weight: 300;
+}
+
+*::selection {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.page-title {
+    text-align: center;
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+}
+
+.about-container * {
+    z-index: 2;
+}
+
+.about-header {
+    margin-bottom: 2rem;
+}
+
+.description-light  {
+    font-size: 0.95rem;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.about-image {
+    width: 100%;
+}
+
+.more-button, .more-button span {
+    cursor: pointer;
+    font-size: .9rem;
+    color: #b615a0 !important;
+}
+
+.more-text {
+    color: #787878;
+    font-weight: 300;
+    transition: .1s color ease-in;
+    /*width: fit-content;*/
+    padding: 15px;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+}
+.more-text-container {
+    width: fit-content !important;
+}
+
+.hide {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    background: none;
+    width: 0;
+}
+
+.more-text:hover {
+    color: #ffffff;
+}
+
+.space{
+    margin-right: 10px;
+}
+
+/******************** ABOUT TEXT ANIMATION ********************/
+.effect1{
+    animation: zoom 6s linear infinite;
+    -webkit-animation: zoom 6s linear infinite;
+}
+.effect2{
+    animation: bounce 3s linear infinite;
+    -webkit-animation: bounce 3s linear infinite;
+}
+.effect3{
+    animation: squash 2s linear infinite;
+    -webkit-animation: squash 2s linear infinite;
+}
+.effect4{
+    animation: rot 5s linear infinite;
+    -webkit-animation: rot 5s linear infinite;
+}
+.effect5{
+    animation: fade2 4s linear infinite;
+    -webkit-animation: fade2 4s linear infinite;
+}
+
+@keyframes zoom{
+    0%{transform: scale(1);}
+    50%{transform: scale(1.1);}
+    100%{transform: scale(1);}
+}
+@-webkit-keyframes zoom{
+    0%{-webkit-transform: scale(1);}
+    50%{-webkit-transform: scale(1.1);}
+    100%{-webkit-transform: scale(1);}
+}
+
+@keyframes bounce{
+    0%{transform: translateY(0px);}
+    50%{transform: translateY(1px);}
+    100%{transform: translateY(0px);}
+}
+@-webkit-keyframes bounce{
+    0%{-webkit-transform: translateY(0px);}
+    50%{-webkit-transform: translateY(1px);}
+    100%{-webkit-transform: translateY(0px);}
+}
+
+@keyframes squash{
+    0%{transform:scale(1,1);}
+    50%{transform:scale(1,1.2);}
+    100%{transform:scale(1,1);}
+}
+@-webkit-keyframes squash{
+    0%{-webkit-transform:scale(1,1);}
+    50%{-webkit-transform:scale(1,1.2);}
+    100%{-webkit-transform:scale(1,1);}
+}
+
+@keyframes rot{
+    0%{transform: rotate(9deg);}
+    50%{transform: rotate(-9deg);}
+    100%{transform: rotate(9deg);}
+}
+@-webkit-keyframes rot{
+    0%{-webkit-transform: rotate(9deg);}
+    50%{-webkit-transform: rotate(-9deg);}
+    100%{-webkit-transform: rotate(9deg);}
+}
+
+@keyframes fade2{
+    0%{
+        transform: scale(.8);
+        opacity: .7;
+    }
+    50%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(.8);
+        opacity: .7;
+    }
+}
+@-webkit-keyframes fade2{
+    0%{
+        -webkit-transform: scale(.8);
+        opacity: .7;
+    }
+    50%{
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        -webkit-transform: scale(.8);
+        opacity: .7;
+    }
+}
+
+/******************** ABOUT TEXT ANIMATION ********************/
+
+.works-article:first-child {
+    margin-top: 250px;
+}
+
+
+.line-works-page {
+    width: 30px;
+    height: 5px !important;
+    color: #ffffff;
+    background-color: rgb(255, 255, 255);
+    border-width:0;
+    margin: auto 40px auto 0;
+}
+
+.tools {
+    font-size: 0.65rem;
+    display: inline-block;
+    margin-top: 10px;
+
+    transition: .1s all ease-in;
+}
+
+.hover-blue:hover {
+    color: #999efc;
+}
+
+.hover-orange:hover {
+    color: #ffe6b3;
+}
+
+.works-view-more {
+    display: flex;
+    margin-top: 10vh;
+    transition: .1s all ease-in;
+}
+
+.works-img {
+    filter: grayscale(1);
+    transition: .1s all linear;
+    max-width: 620px;
+    border-radius: 3px;
+}
+
+.works-img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.work-info-container {
+    margin-top: 80px !important;
+}
+
+.work-info-img {
+    max-width: 100%;
+    filter: grayscale(1);
+    transition: .5s all ease-in-out;
+}
+
+.work-info-img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.work-prev-text {
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.work-next-text {
+    white-space: nowrap;
+    transform: rotate(90deg);
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.swiper-container {
+    max-height: 50vh;
+    overflow: hidden;
+}
+
+.work-info-more {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    user-select: none;
+}
+
+.loader-title {
+    font-size: 3rem;
+}
+
+.loader-container {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+}
+
+.contacts-container * {
+    z-index: 2;
+}
+
+.contacts-form-label {
+    display: block;
+}
+
+.contacts-location-text {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.contacts-column * {
+    text-align: right;
+}
+
+.contacts-line {
+    position: relative;
+    width: 1px;
+    background-color: white;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.contacts-line p {
+    font-size: 2rem;
+    position: absolute;
+    top: 43%; left: -50px;
+    background-color: black;
+    padding: 15px 20px 30px;
+    border-radius: 50%;
+}
+
+.contacts-info-text {
+    justify-content: center;
+}
+
+.not-found-big {
+    font-size: 10rem;
+    color: deeppink;
+    text-decoration: line-through;
+}
+
+.not-found-medium {
+    font-size: 3rem;
+    color: deeppink;
+    margin: 0 auto;
+}
+
+.not-found-small {
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.not-found-big, .not-found-medium, .not-found-small {
+    text-align: center;
+}
+
+.appearing-animation {
+    animation-name: elementAppears;
+    animation-fill-mode: forwards;
+    animation-duration: .3s;
+}
+
+@keyframes elementAppears {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.contacts-form-submitted {
+    font-size: 2rem;
+    text-align: center;
+}

@@ -1,0 +1,37 @@
+{
+  "works": [
+    {
+      "id": 1,
+      "title": "Dzvin-Shop",
+      "alias": "dzvin_shop",
+      "description": "Some short description for Dzvin-shop",
+      "images": ["dzvin.png", "dzvin2.png"]
+    },
+    {
+      "id": 2,
+      "title": "My first shop",
+      "alias": "my_first_shop",
+      "description": "Some short description for Example Shop",
+      "images": ["example.png", "example2.png"]
+    }
+  ],
+  "worksdzvin_shop": {
+    "id": 1,
+    "title": "Dzvin-Shop",
+    "alias": "dzvin_shop",
+    "description": "Some short description for Dzvin-shop",
+    "images": ["dzvin.png", "dzvin2.png"],
+    "prevAlias": "dzvin_shop",
+    "nextAlias": "my_first_project"
+  },
+  "worksmy_first_project": {
+    "id": 2,
+    "title": "My first shop",
+    "alias": "my_first_shop",
+    "description": "Some short description for Example Shop",
+    "images": ["example.png", "example2.png"],
+    "prevAlias": "dzvin_shop",
+    "nextAlias": "my_first_project"
+  }
+
+}
