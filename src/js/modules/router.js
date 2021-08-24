@@ -43,34 +43,36 @@ class Router {
 
     }
 
-    routeSelected(a) {
-        const href = a.getAttribute('href');
-        let params = null;
-
-        let currentRoute = null;
-
-        for (let route in this.#routes) {
-
-            if (this.#isRoute(route, href)) {
-
-                currentRoute = this.#routes[route];
-
-                params = this.#getParams(route, href);
-
-                break;
-            }
-            
-        }
-
-        currentRoute ? new currentRoute(params ? params : null) : new NotFoundPage;
-    }
-
     fillCurrentPage() {
         const currentRoute = window.location.pathname;
 
         const a = document.querySelector(`a[href="${currentRoute}"]`);
 
         this.routeSelected(a);
+    }
+
+    routeSelected(a) {
+        let params = null;
+
+        let currentRoute = null;
+
+        if (a) {
+            const href = a.getAttribute('href');
+
+            for (let route in this.#routes) {
+
+                if (this.#isRoute(route, href)) {
+
+                    currentRoute = this.#routes[route];
+
+                    params = this.#getParams(route, href);
+
+                    break;
+                }
+            }
+        }
+
+        currentRoute ? new currentRoute(params ? params : null) : new NotFoundPage;
     }
 
     #isRoute(route, href) {

@@ -15,24 +15,40 @@ class WorksPage extends Page {
         }
 
 
-        if (window.screen.width > 768) {
+        if (window.screen.width > 990) {
             const rows = document.querySelectorAll('.works-article .row');
 
             rows.forEach(row => {
                 const viewMore = row.querySelector('.works-view-more');
-                viewMore.style.display = 'none';
 
                 row.addEventListener('mouseover', () => {
-                    viewMore.style.display = 'flex';
+                    viewMore.classList.remove('works-view-more-animation-out');
+                    viewMore.classList.add('works-view-more-animation-in');
                 });
 
                 row.addEventListener('mouseleave', () => {
-                    viewMore.style.display = 'none';
+                    viewMore.classList.remove('works-view-more-animation-in');
+                    viewMore.classList.add('works-view-more-animation-out');
                 });
 
             });
         }
 
+        const worksArticle = document.querySelectorAll('.works-article');
+
+        this.setVisible(worksArticle);
+
+        window.addEventListener('scroll', () => {
+            this.setVisible(worksArticle);
+        });
+    }
+
+    setVisible(worksArticle) {
+        worksArticle.forEach(work => {
+            if (this.checkVisible(work)) {
+                work.classList.add('appearing-work');
+            }
+        });
     }
 
     render() {
@@ -41,7 +57,6 @@ class WorksPage extends Page {
         if (loading || works === null) {
             return Loader();
         }
-
 
         return (
             `<div class="row justify-content-center">
@@ -63,12 +78,12 @@ class WorksPage extends Page {
                                 <div class="row works-unit">
                                     <div class="col-md-6 works-text-container">
                                         <h1 class="works-title title-strong"><a href="/works/${work.alias}">${work.title}</a></h1>
-                                        <h3 class="works-description description-light">${work.description} <br> <span class="tools"></span> <span class="tools hover-orange">${work.tools}</span></h3>
+                                        <h3 class="works-description description-light">${work.description} <br> <span class="tools"></span><span class="tools hover-orange">${work.tools}</span></h3>
                                         
                                         <a href="/works/${work.alias}" class="works-view-more tools"> <hr class="line-works-page" style=""> view more</a>
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="/works/${work.alias}"><img src="${work.image}" alt="${work.title}" class="works-img"></a>
+                                        <a href="${work.url}" target="_blank"><img src="${work.image}" alt="${work.title}" class="works-img"></a>
                                     </div>
                                 </div>
                             </article>
@@ -89,6 +104,12 @@ class WorksPage extends Page {
             'title': 'My Works',
             'url': '/works'
         };
+    }
+
+    checkVisible(elm) {
+        let rect = elm.getBoundingClientRect();
+        let viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
     }
 }
 

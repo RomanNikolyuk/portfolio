@@ -35,10 +35,14 @@ class Page {
 
         this.mainNode.innerHTML = html;
 
-        const {title, url} = this.pageInfo();
+        if (this.pageInfo) {
+            const {title, url} = this.pageInfo();
 
-        document.querySelector('title').textContent = title + ' | Roman Nikolyuk, Full-Stack Web Developer';
-        window.history.pushState({'url': url}, '', url);
+            document.querySelector('title').textContent = title + ' | Roman Nikolyuk, Full-Stack Web Developer';
+            window.history.pushState({'url': url}, '', url);
+        } else {
+            document.querySelector('title').textContent = 'Some Beautiful Page | Roman Nikolyuk, Full-Stack Web Developer';
+        }
     }
 
     rerender() {

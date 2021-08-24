@@ -27,7 +27,7 @@ class HomePage extends Page {
     }
 
     pageInfo() {
-        return {title: 'Create Your Own Website | Roman Nikolyuk, Web Developer', url: '/'};
+        return {title: 'Site Creator | Roman Nikolyuk, Web Developer', url: '/'};
     }
 }
 

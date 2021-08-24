@@ -12,6 +12,13 @@ class NotFoundPage extends Page {
             </div>
         `;
     }
+
+    pageInfo() {
+        return {
+            title: 'Page not found 😑',
+            url: ''
+        };
+    }
 }
 
 export default NotFoundPage;

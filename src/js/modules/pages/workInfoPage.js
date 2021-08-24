@@ -3,7 +3,7 @@ import RequestManager from "../requestManager";
 import store from "../../store";
 import {receivedWork, requestWork, workAliasChange, workChange} from "../../actions/work-actions";
 import Loader from "./fetchLoader";
-import Swiper from "swiper";
+import Swiper, {Autoplay} from "swiper";
 
 class WorkInfoPage extends Page {
 
@@ -19,7 +19,11 @@ class WorkInfoPage extends Page {
     }
 
     setListeners() {
+        Swiper.use([Autoplay]);
         const slider = new Swiper('.swiper-container', {
+            autoplay: {
+                delay: 1500
+            },
             direction: 'vertical',
             navigation: {
                 nextEl: '.more-button',
@@ -118,7 +122,7 @@ class WorkInfoPage extends Page {
                             <div class="swiper-pagination"></div>
                           </div>
                            
-                          <span class="more-button work-info-more">more</span>
+                          <a href="${work.url}" target="_blank"><span class="more-button work-info-more">more</span></a>
 
                                                 
                     </div>

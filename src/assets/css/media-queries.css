@@ -5,7 +5,7 @@
     display: none;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 990px) {
     .menu-normal {
         display: none !important;
     }
@@ -160,6 +160,120 @@
     .page-subtitle {
         align-items: center;
     }
-
-
 }
+
+@media all and (min-width: 320px) and (max-width: 990px) {
+    .menu-mobile-button {
+        width: 40px;
+    }
+
+    .home-title {
+        font-size: 1rem !important;
+    }
+
+    .home-title strong {
+        font-size: 1.5rem !important;
+    }
+
+    .menu-list-mobile {
+        margin-top: 2rem;
+        padding-left: 1rem;
+    }
+
+    .page-title {
+        font-size: 1rem;
+    }
+
+    .page-subtitle {
+        font-size: .75rem !important;
+    }
+
+    .about-container {
+        margin-top: 60px !important;
+    }
+
+    .description-light {
+        font-size: .5rem !important;
+    }
+
+    .more-button {
+        display: none;
+    }
+
+    .more-text {
+        display: none;
+    }
+
+    .more-text-mobile {
+        display: block !important;
+        background-color: rgba(0,0,0,0.6);
+        width: content-box;
+        border-radius: 5px;
+    }
+
+    .page-subtitle * {
+        font-size: .6rem !important;
+    }
+
+    .work-next-text {
+        transform: rotate(0) !important;
+        margin: 20px auto !important;
+        display: block !important;
+    }
+
+    .work-prev-text {
+        transform: rotate(0) !important;
+        margin: 20px auto !important;
+        display: block !important;
+    }
+
+    .work-info-more {
+        /*margin-top: -116px !important;*/
+        display: none !important;
+    }
+
+    .contacts-form-submitted {
+        font-size: .75rem !important;
+    }
+
+    .contacts-container {
+        justify-content: center;
+    }
+
+    .label {
+        font-size: .75rem !important;
+    }
+
+    .text-input {
+        font-size: .75rem !important;
+    }
+
+    .submit-btn {
+        padding: 7px 33% !important;
+        font-size: .75rem !important;
+    }
+
+    .contacts-line {
+        height: 1px !important;
+        width: 79vw !important;
+    }
+
+    .contacts-line p {
+        display: none;
+    }
+
+    .contacts-column * {
+        text-align: center !important;
+    }
+
+    .contacts-column > .title-strong {
+        margin-top: 18px;
+    }
+
+    .loader-dot::before {
+        height: 15px !important;
+        width: 15px !important;
+        top: 19px;
+    }
+}
+

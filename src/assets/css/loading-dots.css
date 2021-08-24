@@ -1,6 +1,11 @@
 .loader-container {
     display: flex;
 }
+
+.loader-title {
+    font-size: 2.5rem;
+}
+
 .loader-dot {
     position: relative;
     width: 15px;

@@ -3,7 +3,7 @@ const HTMLPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: './src/js/main.js',
     output: {
         filename: "bundle.js",

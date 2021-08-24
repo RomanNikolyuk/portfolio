@@ -82,7 +82,7 @@ function textAnimate() {
 
     const text = document.querySelectorAll('p, h1, li, h3, i, a');
 
-    if (window.screen.width > 768) {
+    if (window.screen.width > 990) {
         body.addEventListener('pointermove', (event) => {
             /****************************************/
 

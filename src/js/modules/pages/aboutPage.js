@@ -102,6 +102,8 @@ class AboutPage extends Page {
 I'm Full Stack developer with experience in <br>Laravel,  React and Wordpress.  I work with <br>each client individually, fully fulfilling his <br>technical task. <br><br>I'm looking for interesting <br>projects which will improve my programming <br>skills and will make money for the client.
                         </p>
                     </div>
+                    
+                    <p class="description-light more-text-mobile">I'm Full Stack developer with experience in Laravel, React and Wordpress. I work with each client individually, fully fulfilling his technical task. I'm looking for interesting projects which will improve my programming skills and will make money for the client.</p>
               </div> 
 </div>
               

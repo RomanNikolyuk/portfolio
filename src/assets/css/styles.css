@@ -1,8 +1,8 @@
+@import "media-queries.css";
 @import "loading-dots.css";
 @import "form.css";
 @import "loading-pages.css";
 @import "background-animation.css";
-@import "media-queries.css";
 
 @font-face {font-family: "Madera Regular";
     src: url("/src/assets/fonts/Madera/a3e629ef74f23205613f908b609d9b72.eot"); /* IE9*/
@@ -46,7 +46,7 @@ a {
 }
 
 .title-strong, .title-strong a {
-    font-size: 2.75rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: white;
     transition: all .5s;
@@ -72,7 +72,7 @@ a {
 }
 
 .title-light {
-    --title-text-margin-top: 1.4rem;
+    --title-text-margin-top: .5rem;
     align-content: center;
     margin-top: var(--title-text-margin-top);
     font-weight: 300;
@@ -179,6 +179,10 @@ a {
 }
 .more-text-container {
     width: fit-content !important;
+}
+
+.more-text-mobile {
+    display: none;
 }
 
 .hide {
@@ -299,6 +303,26 @@ a {
     margin-top: 250px;
 }
 
+.works-article {
+    opacity: 0;
+}
+
+.appearing-work {
+    animation: .5s ease-out forwards appearingWork;
+}
+
+@keyframes appearingWork {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .line-works-page {
     width: 30px;
@@ -327,8 +351,34 @@ a {
 
 .works-view-more {
     display: flex;
+    opacity: 0;
     margin-top: 10vh;
-    transition: .1s all ease-in;
+}
+
+.works-view-more-animation-in {
+    animation: .5s linear forwards appearingViewMore;
+}
+
+.works-view-more-animation-out {
+    animation: .5s linear forwards disappearingViewMore;
+}
+
+@keyframes appearingViewMore {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes disappearingViewMore {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 .works-img {
@@ -345,6 +395,7 @@ a {
 
 .work-info-container {
     margin-top: 80px !important;
+    margin-bottom: 80px !important;
 }
 
 .work-info-img {
@@ -384,10 +435,6 @@ a {
     margin: 0 auto;
     width: fit-content;
     user-select: none;
-}
-
-.loader-title {
-    font-size: 3rem;
 }
 
 .loader-container {
