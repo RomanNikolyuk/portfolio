@@ -35,6 +35,16 @@ class Router {
             }
         });
 
+        /**
+         * Back Button Select
+         **/
+        window.addEventListener('popstate', () => {
+            const simulationA = document.createElement('a');
+            simulationA.href = window.location.pathname;
+
+            this.routeSelected(simulationA);
+        });
+
         this.homeLink.addEventListener('click', (event) => {
             event.preventDefault();
 

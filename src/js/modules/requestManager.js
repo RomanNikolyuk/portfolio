@@ -1,5 +1,5 @@
 class RequestManager {
-    static url = 'http://localhost/portfolio/wp-json/api/';
+    static url = 'https://romanstudio.pp.ua/wp-json/api/';
 
     static works() {
         return this.sendRequest('works');
@@ -22,7 +22,7 @@ class RequestManager {
             body.append(key, value);
         }
 
-        return fetch('http://localhost/portfolio/wp-admin/admin-ajax.php?action=send_form', {
+        return fetch('https://romanstudio.pp.ua/wp-admin/admin-ajax.php?action=send_form', {
             method: "POST",
             body
         });

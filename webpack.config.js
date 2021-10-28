@@ -6,7 +6,7 @@ module.exports = {
     mode: "production",
     entry: './src/js/main.js',
     output: {
-        filename: "bundle.js",
+        filename: "[name].[hash].js",
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -40,7 +40,18 @@ module.exports = {
             },
         ],
     },
-
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    name: 'vendors',
+                    test: /node_modules/,
+                    chunks: "all",
+                    enforce: true
+                }
+            }
+        }
+    },
     plugins: [
         new HTMLPlugin({
             // Додатково налаштуємо об'єкт
@@ -52,6 +63,6 @@ module.exports = {
 
     devServer: {
         contentBase: 'dist',
-        port: 2222
+        port: 3333
     }
 };

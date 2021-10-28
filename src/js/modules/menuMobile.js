@@ -1,16 +1,29 @@
 function menuMobile() {
     const menuMobile = document.querySelector('.menu-mobile-container');
+    const hideTimeout = 500;
 
     function showMenu() {
         menuMobile.classList.remove('disappearance');
         menuMobile.classList.add('appear');
         document.body.style.overflowY = 'hidden';
+        hide(false);
+    }
+
+    function hide(hide) {
+        setTimeout(() => {
+            if (hide) {
+                menuMobile.classList.add('hidden');
+            } else {
+                menuMobile.classList.remove('hidden');
+            }
+        }, hideTimeout);
     }
 
     function hideMenu() {
         menuMobile.classList.remove('appear');
         menuMobile.classList.add('disappearance');
         document.body.style.overflowY = 'scroll';
+        hide(true);
     }
 
     const button = document.querySelector('.menu-mobile-button') ?? null;

@@ -64,6 +64,11 @@
         animation: disappear .5s ease-out forwards;
     }
 
+    .hidden {
+        opacity: 0;
+        display: none !important;
+    }
+
     .exit-button {
         width: 60px;
         height: 28px;
